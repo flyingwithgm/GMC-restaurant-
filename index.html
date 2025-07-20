@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GMC Restaurant – Fine Dining & Online Orders</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#c8a96a;--black:#111;--white:#fff;--grey:#f5f5f5}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Lato',sans-serif;color:var(--black);background:var(--white);scroll-behavior:smooth}
+    header{height:100vh;background:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1350&q=80') center/cover fixed;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+    header::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55)}
+    .hero-content{z-index:1}.hero-content h1{font-family:'Playfair Display',serif;font-size:3.5rem;letter-spacing:2px}
+    .hero-content p{font-size:1.2rem;margin:10px 0 25px}.btn-hero{background:var(--gold);color:var(--white);padding:14px 30px;border:none;border-radius:50px;font-size:1rem;cursor:pointer;transition:.3s}.btn-hero:hover{background:#b18c4f}
+    nav{position:sticky;top:0;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:space-between;padding:14px 24px;z-index:10}
+    .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold)}
+    .nav-links a{margin-left:24px;text-decoration:none;color:var(--black);font-weight:700}
+    section{padding:80px 20px;max-width:1100px;margin:auto}h2{font-family:'Playfair Display',serif;font-size:2.2rem;text-align:center;margin-bottom:40px}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+    .card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:.3s}
+    .card:hover{transform:translateY(-4px)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .info{padding:20px}.info h3{font-size:1.3rem;margin-bottom:6px}.info p{color:#555;font-size:.95rem;margin-bottom:10px}
+    .price{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:12px}
+    .btn-order{background:var(--gold);color:var(--white);border:none;padding:10px 20px;border-radius:6px;cursor:pointer}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin-top:20px}
+    .gallery img{width:100%;border-radius:8px}
+    footer{background:var(--black);color:var(--white);text-align:center;padding:30px 20px;font-size:.9rem}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-content">
+    <h1>GMC RESTAURANT</h1>
+    <p>Experience Fine Dining • Order in Two Taps</p>
+    <button class="btn-hero" onclick="scrollToSection('menu')">View Menu & Order</button>
+  </div>
+</header>
+
+<nav>
+  <div class="logo">GMC</div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="menu">
+  <h2>Signature Dishes</h2>
+  <div class="menu-grid">
+    <!-- Dish 1 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Grilled Salmon">
+      <div class="info">
+        <h3>Grilled Salmon Supreme</h3>
+        <p>Fresh Atlantic salmon, lemon-butter glaze, seasonal veggies</p>
+        <div class="price">GHS 95</div>
+        <button class="btn-order" onclick="order('Grilled Salmon Supreme',95)">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <!-- Dish 2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Rib-eye Steak">
+      <div class="info">
+        <h3>Prime Rib-eye Steak</h3>
+        <p>300 g hand-cut steak, peppercorn sauce, truffle fries</p>
+        <div class="price">GHS 120</div>
+        <button class="btn-order" onclick="order('Prime Rib-eye Steak',120)">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <!-- Dish 3 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1559847844-d90bf2e7846b?auto=format&fit=crop&w=600&q=80" alt="Seafood Platter">
+      <div class="info">
+        <h3>Deluxe Seafood Platter</h3>
+        <p>Lobster, prawns, calamari, garlic-butter rice</p>
+        <div class="price">GHS 150</div>
+        <button class="btn-order" onclick="order('Deluxe Seafood Platter',150)">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <!-- Dish 4 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" alt="Vegan Pasta">
+      <div class="info">
+        <h3>Creamy Vegan Pasta</h3>
+        <p>Penne, cashew cream, roasted vegetables, fresh basil</p>
+        <div class="price">GHS 65</div>
+        <button class="btn-order" onclick="order('Creamy Vegan Pasta',65)">Order via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Interior">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Dining Area">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Chef Special">
+    <img src="https://images.unsplash.com/photo-1554306274-f23873d9a26c?auto=format&fit=crop&w=600&q=80" alt="Dessert">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact & Location</h2>
+  <p style="text-align:center;font-size:1.1rem;margin-bottom:20px">
+    📍 Harbour Road, Takoradi<br>
+    📞 <a href="tel:+233557700946" style="color:var(--gold)">055 770 0946</a>
+  </p>
+  <p style="text-align:center">
+    <button class="btn-order" onclick="window.open('https://wa.me/233557700946','_blank')" style="padding:14px 28px;font-size:1rem">Message on WhatsApp</button>
+  </p>
+</section>
+
+<footer>
+  © 2024 GMC Restaurant – Website by George Nuyekpe
+</footer>
+
+<script>
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+  function order(item,price){
+    const msg = `Hi GMC Restaurant, I'd like to order: ${item} (GHS ${price}).\n\nMy name & delivery address:`;
+    window.open(`https://wa.me/233557700946?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+</script>
+</body>
+</html>
